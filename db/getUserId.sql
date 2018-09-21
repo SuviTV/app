@@ -1,5 +1,13 @@
 create function get_user_id (
-	email text
+	e text
 ) returns integer as $$
-	select id from "User" where email = $1;
+	declare
+		u integer := (select id from "User" where email = e);
+	begin
+		if u is null then
+			raise exception 'USER NOT FOUND';
+		else
+			return u;
+		end if;
+	end
 $$ language sql;
