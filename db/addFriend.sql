@@ -1,10 +1,10 @@
 create function addFriend(
-	initiator integer,
-	recipient integer
+	text,
+	text
 ) returns integer as $$
 	insert into "Relations" (
-		(select * from get_user_id(initiator)),
-		(select * from get_user_id(recipient)),
+		(select * from get_user_id($1)),
+		(select * from get_user_id($2)),
 		'pending'
 	);
 $$ language sql;
