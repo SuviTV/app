@@ -2,19 +2,9 @@ create or replace function accept_friend (
 	i text,
 	r text
 ) returns integer as $$
-	declare
-		f integer := (
-			select id from "Relations"
-				where initiator = i
-				and recipient = r
-			);
-	begin
-		if f is null then
-			raise exception 'RELATION NOT FOUND';
-		end if;
-
-		update "Relations" set current_status = 'active'
-			where id = f;
-	end;
+	update "Relations" set current_status = 'active'
+		where initiator = (select get_user_id(i))
+		and recipient = (select get_user_id(r))
+		returning id;
 $$ language sql;
 
