@@ -1,4 +1,4 @@
-create function get_user_id (
+create or replace function get_user_id (
 	e text
 ) returns integer as $$
 	declare
