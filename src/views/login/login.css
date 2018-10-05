@@ -1,0 +1,52 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+.title{
+    display: flex;
+    font-family: 'Avenir Next';
+    font-size: 100px;
+    font-weight: 500;
+}
+.module{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.548);
+}
+.line{
+    background-color: rgba(0, 0, 0, 0.452);
+    height: 2px;
+    width: 450px;
+    border-radius: 35px 35px;
+}
+.facebook{
+    font-family: 'Avenir Next';
+    font-size: 25px;
+    background-color:#3B5998;
+    color: white;
+    height: 50px;
+    width: 250px;
+    border-radius: 25px 25px;
+}
+.login{
+    font-family: 'Avenir Next';
+    font-size: 25px;
+    background-image: linear-gradient(to right, rgb(0, 140, 255), rgb(1, 153, 1));
+    color: white;
+    height: 50px;
+    width: 250px;
+    border-radius: 25px 25px;
+}
+.createAccount{
+    font-family: 'Avenir Next';
+    font-size: 25px;
+    background-image: white;
+    color: rgb(0, 0, 0);
+    height: 50px;
+    width: 250px;
+    border-radius: 25px 25px;
+} 
