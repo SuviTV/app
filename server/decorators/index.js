@@ -6,7 +6,7 @@ exports.decorate = (app) => {
   auth.decorate(app)
     .then(massive.decorate)
     .then((app) => {
-      app.listen(3000 || process.env.PORT, function() {
+      app.listen(3001 || process.env.PORT, function() {
         console.log(`suvi active on ${this.address().port}`)
       })
     })
