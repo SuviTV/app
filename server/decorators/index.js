@@ -6,6 +6,7 @@ function listen(app) {
     console.log(`suvi active on ${this.address().port}`)
   })
 }
+
 exports.decorate = (app) => {
   console.log('...starting suvi...')
   auth.decorate(app)
