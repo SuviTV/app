@@ -8,7 +8,7 @@ exports.decorate = (app) => {
   massive(connect)
     .then(db => {
       console.log(`
-        --Postgres Connection Acquired--
+  ====== MASSIVE INITIALIZED       
       `)
       app.set('db', db);
     });
