@@ -1,15 +1,13 @@
+require('dotenv').config();
 const massive = require('massive');
 
-const connect = (
-'postgres://suvi_dev:\$uv1tvrul3s@suvi-dev.cag5x1h0pylh.us-east-2.rds.amazonaws.com:5432/suvidevelopers'
-);
+const connect = (process.env.MASSIVE_CONNECTION);
 
 exports.decorate = (app) => {
-  massive(connect)
+  return massive(connect)
     .then(db => {
-      console.log(`
-  ====== MASSIVE INITIALIZED       
-      `)
-      app.set('db', db);
-    });
+      app.set('massive', db);
+      console.log(` ====== MASSIVE INITIALIZED`)
+    })
+    .then(() => Promise.resolve(app))
 };
