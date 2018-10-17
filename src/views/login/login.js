@@ -7,17 +7,18 @@ import './login.css'
 
 class login extends Component {
 
-    // componentDidMount() {
-    //     axios.get('/auth/me')
-    //         .then(resp => {
-    //             if (resp.data !== 'Not logged in!') {
-    //                 this.props.history.push('/home')
-    //             }
-    //         })
-    //         .catch(err => {
-    //             console.error(err)
-    //         })
-    // }
+    componentDidMount() {
+        axios.get('/auth/me')
+            .then(resp => {
+                if (resp.data !== 'Not logged in!') {
+                    this.props.history.push('/home')
+                }
+            })
+            .catch(err => {
+                console.error(err)
+            })
+    }
+
 
     render(){
         return(
@@ -35,13 +36,19 @@ class login extends Component {
                         <br/>
                         <br/>
                         <br/>
-                        <button className='facebook'><img src={fbook}/>Login with Facebook</button>
+                        <form action='http://localhost:3001/auth' >
+                            <input type='submit' className='facebook' value='Login with Facebook'/>
+                        </form>
                         <br/>
                         <div className='line'></div>
                         <br/>
-                        <button className='login'>Login</button>
+                        <form action='http://localhost:3001/auth'>
+                            <input type='submit' className='login' value='Login'/>
+                        </form>
                         <br/>
-                        <button className='createAccount'>Create Account</button>
+                        <form action='http://localhost:3001/auth'>
+                            <input type='submit' className='createAccount' value='Create Account'/>
+                        </form>
                         <br/>
                     </div>
                 </div>

@@ -45,7 +45,7 @@
 .facebook{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     font-family: 'Avenir Next';
     font-size: 25px;
