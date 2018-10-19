@@ -14,10 +14,10 @@
     "react-scripts": "1.1.5"
   },
   "scripts": {
-    "front:start": "react-scripts start",
-    "front:build": "react-scripts build",
+    "front": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "back:start": "nodemon server",
+    "back": "nodemon server",
     "start": "concurrently 'npm run front:start' npm run back:start"
   }
 }
