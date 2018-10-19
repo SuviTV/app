@@ -42,6 +42,6 @@ exports.decorate = (app) => {
     response.redirect(process.env.REACT_APP_LANDING);
   });
 
-  console.log(` ====== AUTH INITIALIZED`);
+  console.log(` ${'='.repeat(6)} AUTH INITIALIZED`);
   return Promise.resolve(app);
 }

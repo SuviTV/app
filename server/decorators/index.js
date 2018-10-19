@@ -9,7 +9,8 @@ function listen(app) {
 
 exports.decorate = (app) => {
   console.log('...starting suvi...')
-  auth.decorate(app)
+  Promise.resolve(app)
     .then(massive.decorate)
+    .then(auth.decorate)
     .then(listen)
 }
