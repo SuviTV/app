@@ -6,7 +6,7 @@ const decorators = require('./decorators');
 const app = express();
 app.use(express.json());
 app.use(session({
-  secret: process.env.SESSION_SECRET,
+  secret: process.env.SERVER_SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }));

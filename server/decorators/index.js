@@ -2,7 +2,7 @@ const auth = require('./auth.js');
 const massive = require('./massive.js');
 
 function listen(app) {
-  app.listen(3001 || process.env.PORT, function() {
+  app.listen(3001 || process.env.SERVER_PORT, function() {
     console.log(`suvi active on ${this.address().port}`)
   })
 }
