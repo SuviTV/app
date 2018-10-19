@@ -2,7 +2,7 @@ Privacy Policy
 
 Last updated: October 19, 2018
 
-Suvi (“us”, “we”, or “our”) operates the Suvi website (the “Service”).
+Suvi ("us", "we", or "our") operates the Suvi website (the "Service").
 
 This page informs you of our policies regarding the collection, use and disclosure of Personal Information when you use our Service.
 
@@ -10,21 +10,21 @@ We will not use or share your information with anyone except as described in thi
 We use your Personal Information for providing and improving the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible at http://suvi.tv/tos
 
 Information Collection And Use
-While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information (“Personal Information”) may include, but is not limited to:
+While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information ("Personal Information") may include, but is not limited to:
 
 * Name
 * Email address
 * Address
 
 Log Data
-We collect information that your browser sends whenever you visit our Service (“Log Data”). This Log Data may include information such as your computer’s Internet Protocol (“IP”) address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages and other statistics.
+We collect information that your browser sends whenever you visit our Service ("Log Data"). This Log Data may include information such as your computer’s Internet Protocol ("IP") address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages and other statistics.
 
 Google AdSense & DoubleClick Cookie
 Google, as a third party vendor, uses cookies to serve ads on our Service.
 
 Cookies
 Cookies are files with small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a web site and stored on your computer’s hard drive.
-We use “cookies” to collect information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.
+We use "cookies" to collect information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.
 
 Service Providers
 We may employ third party companies and individuals to facilitate our Service, to provide the Service on our behalf, to perform Service-related services or to assist us in analyzing how our Service is used.
@@ -39,7 +39,7 @@ Our Service may contain links to other sites that are not operated by us. If you
 We have no control over, and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
 
 Children’s Privacy
-Our Service does not address anyone under the age of 18 (“Children”).
+Our Service does not address anyone under the age of 18 ("Children").
 We do not knowingly collect personally identifiable information from children under 18. If you are a parent or guardian and you are aware that your child has provided us with Personal Information, please contact us. If we discover that a child under 18 has provided us with Personal Information, we will delete such information from our servers immediately.
 
 Compliance With Laws
