@@ -2,14 +2,16 @@ const auth = require('./auth.js');
 const massive = require('./massive.js');
 
 function listen(app) {
-  app.listen(3001 || process.env.PORT, function() {
-    console.log(`suvi active on ${this.address().port}`)
-  })
+  app.listen(3001 || process.env.SERVER_PORT, function() {
+    console.log(`suvi active on ${this.address().port}`);
+  });
 }
 
 exports.decorate = (app) => {
-  console.log('...starting suvi...')
-  auth.decorate(app)
+  console.log('...starting suvi...');
+
+  Promise.resolve(app)
     .then(massive.decorate)
-    .then(listen)
+    .then(auth.decorate)
+    .then(listen);
 }

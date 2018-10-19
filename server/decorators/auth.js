@@ -4,6 +4,7 @@ const Auth0Strategy = require('passport-auth0');
 exports.decorate = (app) => {
   app.use(passport.initialize());
   app.use(passport.session());
+
   passport.use(new Auth0Strategy({
     domain: process.env.AUTH_DOMAIN,
     clientID: process.env.AUTH_CLIENT_ID,

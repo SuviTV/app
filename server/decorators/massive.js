@@ -7,7 +7,7 @@ exports.decorate = (app) => {
   return massive(connect)
     .then(db => {
       app.set('massive', db);
-      console.log(` ====== MASSIVE INITIALIZED`)
+      console.log(` ====== MASSIVE INITIALIZED`);
     })
-    .then(() => Promise.resolve(app))
-};
+    .then(() => Promise.resolve(app));
+}
