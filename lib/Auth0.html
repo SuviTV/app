@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge,chrome=1"
+  >
+  <title>Sign In with Auth0</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200"
+    rel="stylesheet"
+  >
+</head>
+<style>
+  body, html {
+      font: "Nunito";
+      height: 100%;
+      background-color: #f9f9f9;
+      margin: 0;
+    }
+    
+  body {
+      background-image: url('https://s3.amazonaws.com/suvi-assets/Abstract+Colors.png');
+      background-size: cover;
+      background-position: center bottom;
+      display: flex;
+      justify-content: center;
+    }
+
+    input {
+      background: #fdfdfd;
+      padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+      margin: 1rem 0;
+      font-family: 'Nunito';
+      font-size: 2rem;
+      border-radius: 75px;
+      border: none;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    button {
+      display: inline-block;
+      border: none;
+      border-radius: 75px;
+      padding: 1.3rem 5rem;
+      margin: 1rem 0;
+      position: relative;
+      text-decoration: none;
+      background: none;
+      /* color: #ffffff; */
+      font-family: 'Nunito';
+      font-size: 1.4rem;
+      cursor: pointer;
+      text-align: center;
+      transition: background 250ms ease-in-out, 
+                  transform 150ms ease;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+
+    button:hover,
+    button:focus {
+        background: #0053ba;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    button:active {
+        transform: scale(0.99);
+    }
+
+    label {
+      font-family: 'Nunito';
+    }
+
+    .login-container {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .login-header {
+      font-family: 'Nunito';
+      font-size: 2rem;
+      text-align: center;
+      padding-bottom: 100px;
+    }
+
+    .modal-ctl {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      font-family: 'Nunito';
+      font-size: 2rem;
+      text-align: center;
+      padding-bottom: 100px;
+    }
+
+    .modal > form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-buttons {
+      background: linear-gradient(
+        224deg,
+        #00bc29 0%,
+        #0692bb 67%,
+        #0b73bf 100%
+      );
+      border-radius: 75px;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .modal-buttons > button {
+      margin: 0;
+      color: #ffffff;
+    }
+
+    .modal-buttons > button:hover,
+    .modal-buttons > button:focus {
+      background: none;
+    }
+
+    #divider {
+      height: 1px;
+      border-top: 1px solid rgba(150, 150, 150, .7);
+    }
+
+    #btn-login {
+      background: linear-gradient(
+        224deg,
+        #00bc29 0%,
+        #0692bb 67%,
+        #0b73bf 100%
+      );
+      color: #ffffff;
+    }
+
+    #btn-facebook {
+      background: #1846a7;
+      color: #ffffff; 
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.4rem;
+      padding-bottom: 0.4rem;
+      padding-right: 3rem;
+    }
+
+    #btn-facebook > img {
+      margin-right: 2rem;
+      margin-left: -4.5rem;
+      height: 2.7em;
+      /* left: -40px;
+      top: 6px;
+      position: absolute;
+      padding-left: 3rem; */
+    }
+
+    #btn-create {
+      background: #fdfdfd;
+      color: #333333;
+    }
+  </style>
+
+<body>
+  <div id="root"></div>
+  <!--[if IE 8]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ie8/0.2.5/ie8.js"></script>
+  <![endif]-->
+
+  <!--[if lte IE 9]>
+  <script src="https://cdn.auth0.com/js/polyfills/1.0/base64.min.js"></script>
+  <script src="https://cdn.auth0.com/js/polyfills/1.0/es5-shim.min.js"></script>
+  <![endif]-->
+
+  <script
+    src="https://cdn.auth0.com/js/auth0/9.2/auth0.min.js">
+   </script>
+  <script
+    src="https://cdn.auth0.com/js/polyfills/1.0/object-assign.min.js">
+  </script>
+  <script
+    crossorigin
+    src='https://unpkg.com/react@16/umd/react.development.js'
+  ></script>
+  <script
+    src="https://unpkg.com/babel-standalone@6/babel.min.js">
+  </script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js">
+  </script>
+  <script type='text/babel'>
+    const config = JSON.parse(
+      decodeURIComponent(escape(window.atob('@@config@@')))
+    );
+
+    const params = Object.assign({
+      overrides: {
+        __tenant: config.auth0Tenant,
+        __token_issuer: 'login.suvi.tv'
+      },
+      domain: config.auth0Domain,
+      clientID: config.clientID,
+      redirectUri: config.callbackURL,
+      responseType: 'code'
+    }, config.internalOptions);
+
+    const webAuth = new auth0.WebAuth(params);
+
+    const databaseConnection = 'Username-Password-Authentication';
+
+
+    /**
+    @type _Modal_initialState: {
+      email: String,
+      name: String,
+      password: String
+    }
+    */
+    const _Modal_initialState = {
+      email: '',
+      name: '',
+      password: ''
+    }
+
+    class Modal extends React.Component {
+      state = _Modal_initialState
+
+      handleInputChange = (e) => {
+        e.preventDefault();
+
+        const {
+          name,
+          value
+        } = e.target
+
+        this.setState({
+          [name]: value
+        });
+      }
+
+      login = () => {
+        webAuth.login({
+          realm: databaseConnection,
+          email,
+          password
+        }, function (err) {
+          if (err) throw err;
+        });
+      }
+
+      signup = () => {
+        webAuth.redirect.signupAndLogin({
+          connection: databaseConnection,
+          email,
+          name,
+          password
+        }, function (err) {
+          if (err) displayError(err);
+        });
+      }
+
+      handleSubmit = (type) => {
+        const submit = (
+          type === 'login'
+            ? this.login
+            : this.signup
+        );
+
+        submit({...this.state});
+      }
+
+      render = () => {
+        const greeting = (
+          this.props.type === 'login'
+            ? 'Welcome Back'
+            : "Let's Get Started..."
+        );
+
+        return (
+          <section className='modal'>
+            <header className='modal-header'>{greeting}</header>
+            <form onSubmit={() => this.handleSubmit(this.props.type)}>
+              <label for='email'>Email</label>
+              <input
+                name='email'
+                onChange={this.handleInputChange}
+                value={this.state.email}
+              />
+              <label for='name'>Name</label>
+              <input
+                name='name'
+                onChange={this.handleInputChange}
+                value={this.state.name}
+              />
+              <label for='password'>Password</label>
+              <input
+                name='password'
+                type='password'
+                onChange={this.handleInputChange}
+                value={this.state.password}
+              />
+              <section className='modal-buttons'>
+                <button
+                  onClick={this.props.close}
+                >Cancel</button>
+                <button
+                  type='submit'
+                >Enter</button>
+              </section>
+            </form>
+          </section>
+        );
+      }
+    }
+
+
+    /**
+    @type _App_initialState: {
+      modal: '' | 'create' | 'login'
+    }
+    */
+    const _App_initialState = {
+      modal: ''
+    };
+
+    class App extends React.Component {
+      state = _App_initialState
+
+      handleOpenModal = (e) => {
+        e.preventDefault();
+
+        const { name: modal } = e.target;
+
+        this.setState({
+          modal
+        });
+      }
+
+      handleCloseModal = () => {
+        e.preventDefault();
+
+        this.setState({ modal: 'none' });
+      }
+
+      loginWithFacebook = () => {
+        webAuth.authorize({
+          connection: 'facebook'
+        }, function (err) {
+          if (err) throw err;
+        });
+      }
+
+      render = () => {
+        return (
+          <div className="login-container">
+            {this.state.modal && (
+              <Modal 
+                type={this.state.modal}
+                close={this.handleCloseModal}
+              />
+            )}
+            {!this.state.modal && (
+              <div className="login-box">
+                <header className="login-header">
+                  Welcome to Suvi
+                </header>
+                <button
+                  onClick={this.loginWithFacebook}
+                  id='btn-facebook'
+                 >
+                  <img src='https://s3.amazonaws.com/suvi-assets/Facebook+Icon+(White).png'/>
+                  Login with Facebook
+                </button>
+                <div id='divider'></div>
+                <section className='modal-ctl'>
+                  <button
+                    id="btn-login"
+                    name='login'
+                    onClick={this.handleOpenModal}
+                  >
+                    Login
+                  </button>
+                  <button
+                    id="btn-create"
+                    name='create'
+                    onClick={this.handleOpenModal}
+                  >
+                    Create Account
+                  </button>
+                </section>
+              </div>
+            )}
+          </div>
+        );
+      }
+    }
+
+    ReactDOM.render(
+      <App />,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+
+</html>
