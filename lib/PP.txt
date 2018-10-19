@@ -1,7 +1,7 @@
 Terms And Conditions
 Last updated: October 19, 2018
 
-Please read these Terms of Use (“Terms”, “Terms of Use”) carefully before using the http://suvi.tv website (the “Service”) operated by Suvi (“us”, “we”, or “our”).
+Please read these Terms of Use &quot;Terms&quot;, %&quot;Terms of Use&quot;) carefully before using the http://suvi.tv website (the %&quot;Service&quot;) operated by Suvi (%&quot;us&quot;, %&quot;we&quot;, or %&quot;our&quot;).
 
 Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.
 
@@ -36,7 +36,7 @@ Upon termination, your right to use the Service will immediately cease. If you w
 All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.
 
 Disclaimer
-Your use of the Service is at your sole risk. The Service is provided on an “AS IS” and “AS AVAILABLE” basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or course of performance.
+Your use of the Service is at your sole risk. The Service is provided on an %&quot;AS IS&quot; and %&quot;AS AVAILABLE&quot; basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or course of performance.
 
 Governing Law
 These Terms shall be governed and construed in accordance with the laws of United States without regard to its conflict of law provisions.
