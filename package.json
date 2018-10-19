@@ -18,6 +18,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "back": "nodemon server",
-    "start": "concurrently 'npm run front:start' npm run back:start"
+    "start": "concurrently 'npm run front' 'npm run back'"
   }
 }
